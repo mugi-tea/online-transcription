@@ -128,6 +128,10 @@ function BlockNote({ doc, provider }: EditorProps) {
     recognizer.current?.startContinuousRecognitionAsync(() => {});
   };
 
+  const pauseListening = () => {
+    recognizer.current?.stopContinuousRecognitionAsync(() => {});
+  };
+
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const changeTheme = useCallback(() => {
@@ -156,6 +160,7 @@ function BlockNote({ doc, provider }: EditorProps) {
       <BlockNoteView editor={editor} theme={theme} />
       <div>{recognizingTranscript}</div>
       <button onClick={resumeListening}>start</button>
+      <button onClick={pauseListening}>stop</button>
     </div>
   );
 }
