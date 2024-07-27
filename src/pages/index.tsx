@@ -1,5 +1,5 @@
-import { CollaborativeEditor } from "./CollaborativeEditor";
-import { Room } from "./Room";
+import { CollaborativeEditor } from "../components/CollaborativeEditor";
+import { Room } from "../components/Room";
 import { LiveblocksProvider } from "@liveblocks/react";
 
 export default function Home() {
